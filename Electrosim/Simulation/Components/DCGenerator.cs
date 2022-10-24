@@ -3,8 +3,8 @@
     internal class DCGenerator : BaseComponent
     {
         public ComponentValue Value;
-        public int NPol { get; set; }
-        public int PPol { get; set; }
+        public OutputPort NPol { get; set; }
+        public OutputPort PPol { get; set; }
 
         public override ComponentValue CalculateVoltage()
         {

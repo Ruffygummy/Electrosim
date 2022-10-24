@@ -1,8 +1,14 @@
 ﻿namespace Electrosim.Simulation.Components
 {
-    public struct ComponentValue
+    public class ComponentValue
     {
-        public float Value { get; set; }
+        public ComponentValue(int value, short factor)
+        {
+            Value = value;
+            Factor = factor;
+        }
+
+        public int Value { get; set; }
         public short Factor { get; set; }
 
         public override string ToString()

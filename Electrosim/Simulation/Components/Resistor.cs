@@ -3,11 +3,14 @@
     internal class Resistor : BaseComponent
     {
         public ComponentValue Value;
-        public int Input { get; set; }
-        public int Output { get; set; }
+        public InputPort Input { get; set; }
+        public OutputPort Output { get; set; }
 
         public override ComponentValue CalculateVoltage()
         {
+            var input = Input.CalculateVoltage();
+            var output = Output.CalculateVoltage();
+
             throw new System.NotImplementedException();
         }
     }
