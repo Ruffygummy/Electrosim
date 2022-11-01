@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.IO;
 
 namespace Electrosim.Simulation;
 
@@ -10,10 +12,13 @@ internal class Scene
 
     public static Scene Load(string filename)
     {
-        return null;
+        Scene loadData = JsonConvert.DeserializeObject<Scene>(File.ReadAllText(filename));
+        return loadData;
     }
 
     public void Save(string filename)
     {
+        string saveData = JsonConvert.SerializeObject(this);
+        File.WriteAllText(filename, saveData);
     }
 }
