@@ -2,23 +2,24 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace Electrosim.Simulation;
-
-internal class Scene
+namespace Electrosim.Simulation
 {
-    public List<BaseComponent> Components { get; set; }
-
-    public string Name { get; set; }
-
-    public static Scene Load(string filename)
+    internal class Scene
     {
-        Scene loadData = JsonConvert.DeserializeObject<Scene>(File.ReadAllText(filename));
-        return loadData;
-    }
+        public List<BaseComponent> Components { get; set; }
 
-    public void Save(string filename)
-    {
-        string saveData = JsonConvert.SerializeObject(this);
-        File.WriteAllText(filename, saveData);
+        public string Name { get; set; }
+
+        public static Scene Load(string filename)
+        {
+            Scene loadData = JsonConvert.DeserializeObject<Scene>(File.ReadAllText(filename));
+            return loadData;
+        }
+
+        public void Save(string filename)
+        {
+            string saveData = JsonConvert.SerializeObject(this);
+            File.WriteAllText(filename, saveData);
+        }
     }
 }

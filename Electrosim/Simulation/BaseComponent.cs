@@ -1,8 +1,10 @@
 ﻿using Electrosim.Simulation.Components;
 
-namespace Electrosim.Simulation;
-
-internal abstract class BaseComponent
+namespace Electrosim.Simulation
 {
-    public abstract ComponentValue CalculateVoltage();
+
+    internal abstract class BaseComponent
+    {
+        public abstract ComponentValue CalculateVoltage();
+    }
 }

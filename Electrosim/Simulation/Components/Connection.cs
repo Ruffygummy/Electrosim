@@ -1,11 +1,13 @@
 ﻿using Electrosim.Simulation.Components;
 
-namespace Electrosim.Simulation;
-
-internal class Connection : BaseComponent
+namespace Electrosim.Simulation
 {
-    public override ComponentValue CalculateVoltage()
+
+    internal class Connection : BaseComponent
     {
-        throw new System.NotImplementedException();
+        public override ComponentValue CalculateVoltage()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
